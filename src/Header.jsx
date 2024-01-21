@@ -2,9 +2,20 @@ import sunImg from "./assets/icons/sun.svg";
 import shoppingCard from "./assets/shopping-cart.svg";
 import logo from "./assets/logo.svg";
 import ringImg from "./assets/ring.svg";
+import { useState } from "react";
+import CardDetails from "./cine/CardDetails";
 export default function Header() {
+  const [showCard, setShowCard] = useState(false);
+  function handleShowCardDetails() {
+    setShowCard(true);
+  }
+
+  function handleCardClose() {
+    setShowCard(false);
+  }
   return (
     <>
+      {showCard && <CardDetails onClose={handleCardClose} />}
       <header>
         <nav className="container flex items-center justify-between space-x-10 py-6">
           <a href="index.html">
@@ -30,6 +41,7 @@ export default function Header() {
             </li>
             <li>
               <a
+                onClick={handleShowCardDetails}
                 className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
                 href="#"
               >
