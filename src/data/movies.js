@@ -47,7 +47,9 @@ const data = [
 ]
 
 function getAllMovies() {
-    return data;
+    return data
 }
 
-export { getAllMovies };
+export {
+    getAllMovies
+}
