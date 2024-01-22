@@ -32,7 +32,7 @@ export default function MovieDetailsModal({ movie, onClose, onCardAdd }) {
                 <a
                   className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
                   href="#"
-                  onClick={(e) => onCardAdd(e)}
+                  onClick={(e) => onCardAdd(e, movie)}
                 >
                   <img src={tagImg} alt="tagImg" />
                   <span>${price} | Add to Cart</span>
