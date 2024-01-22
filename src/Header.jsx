@@ -2,10 +2,16 @@ import sunImg from "./assets/icons/sun.svg";
 import shoppingCard from "./assets/shopping-cart.svg";
 import logo from "./assets/logo.svg";
 import ringImg from "./assets/ring.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CardDetails from "./cine/CardDetails";
+import { MovieContext } from "./ context";
+
 export default function Header() {
   const [showCard, setShowCard] = useState(false);
+  const { cartData } = useContext(MovieContext);
+
+  console.log(cartData);
+
   function handleShowCardDetails() {
     setShowCard(true);
   }
@@ -46,6 +52,15 @@ export default function Header() {
                 href="#"
               >
                 <img src={shoppingCard} width="24" height="24" alt="Shopping" />
+                {cartData.length > 0 && (
+                  <span
+                    className="rounded-full absolute top-[-12px] 
+                  left-[28px] bg-[#12CF6F]
+                   text-white text-center p-[2px] w-[30px] h-[30px]"
+                  >
+                    {cartData.length}
+                  </span>
+                )}
               </a>
             </li>
           </ul>
