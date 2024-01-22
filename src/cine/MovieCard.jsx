@@ -59,7 +59,6 @@ export default function MovieCard({ movie }) {
               href="#"
               onClick={(e) => handleAddToCart(e, movie)}
             >
-              <img src="" alt="tag" />
               <span>${price} | Add to Cart</span>
             </a>
           </figcaption>
